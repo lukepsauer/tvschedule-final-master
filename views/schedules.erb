@@ -1,0 +1,17 @@
+<table id="elements" data-action-url="<%= url("/admin/schedule") %>" class="table">
+  <tr>
+    <th>Schedule Name</th>
+    <th>Actions</th>
+  </tr>
+  <% @schedules.each do |schedule| %>
+      <tr data-json='<%= schedule.to_json %>'>
+        <td><%= schedule.name %></td>
+        <td class="fixed actions">
+          <a href="<%= url("/admin/schedule/#{schedule.id}/periods") %>" title="Periods" class="btn btn-success"><i class="fa fa-bars"></i></a>
+          <a href="#" title="Edit" class="btn btn-info edit-schedule-btn" <%= 'disabled' if schedule.permanent %>><i class="fa fa-pencil"></i></a>
+          <a href="#" title="Delete" class="btn btn-danger delete-schedule-btn <%= 'disabled' if schedule.permanent %>"><i class="fa fa-trash-o"></i></a>
+        </td>
+      </tr>
+  <% end %>
+  <tr><td colspan="2"><a id="add_schedule_btn" href="#" title="Add Schedule" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add Schedule</a></td></tr>
+</table>

@@ -1,0 +1,24 @@
+<table id="elements" data-action-url="<%= url("/admin/announcement") %>" class="table ">
+  <tr>
+    <th>Name</th>
+    <th>Body</th>
+    <th>Expires</th>
+    <th>Actions</th>
+  </tr>
+  <% @announcements.each do |annc| %>
+      <tr data-json='<%= annc.to_json %>'>
+        <td class="fixed"><%= annc.title %></td>
+        <td class="fixed"><%= annc.body %></td>
+        <td class="fixed"><%date=annc.expires%><%=date[4]+date[5]+'/'+ date[6]+date[7]+'/'+date[0]+date[1]+date[2]+date[3]%></td>
+        <td class="actions">
+          <a href="#" title="Edit" class="btn btn-info edit-annc-btn"><i class="fa fa-pencil"></i></a>
+          <a href="#" title="Delete" class="btn btn-danger delete-annc-btn"><i class="fa fa-trash-o"></i></a>
+        </td>
+      </tr>
+  <% end %>
+<tr>
+  <td colspan="4"><a id="add_annc_btn" href="#" title="Add Announcement" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add Announcement</a>
+  </td>
+</tr>
+</table>
+

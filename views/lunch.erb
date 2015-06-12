@@ -1,0 +1,19 @@
+<table id="elements" data-action-url="<%= url("/admin/nncement") %>" class="table ">
+  <tr>
+    <th>Lunches</th>
+  </tr>
+  <% @lunches.each do |lunch| %>
+      <tr data-json='<%= lunch.to_json %>'>
+        <td class="">
+          <%=lunch.id%>
+          <ul id="sortable<%=lunch.id%>" class="connectedSortable">
+            <%lunch.text.split(',').length.times do |i|%>
+                <li class="ui-state-default drag-drop"><%=lunch.text.split(',')[i]%> <i class="fa fa-bars pull-right"></i></li>
+            <%end%>
+              </ul>
+            </td>
+
+      </tr>
+  <% end %>
+  <tr><td colspan="2"><a id="save_btn" href="#" title="Save Lunch" class="btn btn-success"><i class="fa fa-save"></i>&nbsp;&nbsp;Save Lunches</a></td></tr>
+</table>

@@ -1,0 +1,739 @@
+@font-face {
+    font-family: 'digi';
+    src: url('http://cssdeck.com/uploads/resources/fonts/digii/DS-DIGII.TTF');
+}
+
+body {
+    overflow: hidden;
+}
+
+.tv-screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 640px;
+    height: 480px;
+
+    /*background: #7da9c0; *//* Old browsers */
+    /*background: -moz-linear-gradient(left,  #7da9c0 0%, #005784 100%); *//* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7da9c0), color-stop(100%,#005784)); *//* Chrome,Safari4+ */
+    /*background: -webkit-linear-gradient(left,  #7da9c0 0%,#005784 100%); *//* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(left,  #7da9c0 0%,#005784 100%); *//* Opera 11.10+ */
+    /*background: -ms-linear-gradient(left,  #7da9c0 0%,#005784 100%); *//* IE10+ */
+    /*background: linear-gradient(to right,  #7da9c0 0%,#005784 100%); *//* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7da9c0', endColorstr='#005784',GradientType=1 ); *//* IE6-9 */
+    background-color: #f5f5f5;
+    overflow: hidden;
+
+}
+.tv-screen-responsive {
+    left: 0;
+    top: 0;
+
+
+    /*background: #7da9c0; *//* Old browsers */
+    /*background: -moz-linear-gradient(left,  #7da9c0 0%, #005784 100%); *//* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7da9c0), color-stop(100%,#005784)); *//* Chrome,Safari4+ */
+    /*background: -webkit-linear-gradient(left,  #7da9c0 0%,#005784 100%); *//* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(left,  #7da9c0 0%,#005784 100%); *//* Opera 11.10+ */
+    /*background: -ms-linear-gradient(left,  #7da9c0 0%,#005784 100%); *//* IE10+ */
+    /*background: linear-gradient(to right,  #7da9c0 0%,#005784 100%); *//* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7da9c0', endColorstr='#005784',GradientType=1 ); *//* IE6-9 */
+    background-color: #f5f5f5;
+    overflow: hidden;
+
+}
+/* PERIOD DETAILS */
+.period-description{
+    width:315px;
+    height:290px;
+    position: absolute;
+    top:150px;
+    left: 85px;
+    font-size: 2em;
+    color: #ffffff;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    letter-spacing: 8px;
+    background-color: #5988bb;
+    border-radius: 5px;
+
+
+}
+.period-description-2{
+    width:600px;
+    height:290px;
+    position: absolute;
+    top:165px;
+    left: 18px;
+    font-size: 1.5em;
+    color: #ffffff;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    background-color: #5988bb;
+    border-radius: 5px;
+
+
+}
+
+#announcements-cable{
+    text-align: left;
+    font-size: .5em;
+    font-weight: normal;
+
+
+}
+
+.period-description-responsive{
+    width: 70%;
+    height:290px;
+    position: absolute;
+    top:150px;
+    left: 85px;
+    font-size: 1.5em;
+    color: #ffffff;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    letter-spacing: 8px;
+    background-color: #5988bb;
+    border-radius: 5px;
+
+
+}
+
+
+
+#period-classes-info{
+    font-weight: 500;
+    font-size: .7em;
+    height:65px;
+    margin-left: -1px;
+    list-style-type: none;
+
+}
+.period-classes-info-split-left{
+    width:55%;
+    float:left;
+
+}
+.period-classes-info-split-right{
+    width:45%;
+    float:right;
+}
+#period-anncmt-info{
+    font-size: .7em;
+
+}
+#period-info{
+    font-size: .8em;
+    color: #eafffd;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 0;
+    margin:15px;
+}
+#period-info td{
+    border-color:transparent;
+    background-color: #104e8b;
+
+}
+.table-bordered{
+    color:#f5f5f5;
+    opacity: 0.8;
+    border-top-width: 5px;
+    border-color:transparent;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+}
+
+/* TIME */
+.tv-time {
+    position: absolute;
+    left: 70px;
+    top: -50px;
+    width: 160px;
+    height: 124px;
+    font-family: 'digi';
+
+    color:#104E8B;
+    opacity: 0.8;
+}
+
+.time {
+    position: absolute;
+    left: -60px;
+    bottom: 20px;
+    width: 160px;
+
+    font-family: 'digi';
+    font-weight: 100;
+    font-size: 60px;
+    text-align: left;
+    z-index: 101;
+}
+
+.time b {
+    font-size: 25px;
+}
+
+/* DATE */
+.time-label{
+    width: 200px; height: 20px;
+    font-size: 1.5em;
+    color: #707070;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    letter-spacing: 10px;
+    position: absolute;
+    bottom: 290px;
+    right: 20px;
+    z-index: 200;
+}
+.time-label2{
+    width: 200px; height: 20px;
+    font-size: 1.5em;
+    color: #707070;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    letter-spacing: 10px;
+    position: absolute;
+    bottom: 150px;
+    right: 20px;
+    z-index: 200;
+}
+.clockbox-left{
+    width: 200px; height: 70px;
+    background: #dfaeab;
+    font-size: 4.5em;
+    color: #515151;
+    font-weight: 200;
+    /* Centering everything */
+    position: absolute;
+
+    text-align: center;
+    line-height: 70px;
+
+
+    border-top: 5px solid #E54B6B;
+    border-radius: 0 0 5px 5px;
+    font-family: 'digi';
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    z-index: 200;
+}
+.clockbox-in{
+    width: 200px; height: 70px;
+    background: #a9dfb6;
+    font-size: 4.5em;
+    color: #515151;
+    font-weight: 200;
+    /* Centering everything */
+    position: absolute;
+
+    text-align: center;
+    line-height: 70px;
+
+    border-top: 5px solid #44a360;
+    border-radius: 0 0 5px 5px;
+
+    font-family: 'digi';
+    position: absolute;
+    bottom: 200px;
+    right: 20px;
+    z-index: 200;
+}
+
+.lip {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 700px;
+    height: 5px;
+    background-color: #104E8B;
+}
+
+.lip-responsive {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 5px;
+    background-color: #104E8B;
+}
+
+.lip-bar-small{
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 700px;
+    height: 4px;
+    background-color: lightgray;
+}
+
+.lip-bar-small-responsive{
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 4px;
+    background-color: lightgray;
+}
+
+
+.annc-mini{
+    margin-left:300px;
+}
+
+.lip-bar-responsive {
+    font-size: 1em;
+    color: white;
+
+
+    text-align: left;
+    line-height: 50px;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 50px;
+    /* IE10 Consumer Preview */
+    background-image: -ms-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* Opera */
+    background-image: -o-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #175DB0), color-stop(1, #09316E));
+
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* W3C Markup, IE10 Release Preview */
+    background-image: linear-gradient(to top, #175DB0 0%, #09316E 100%);
+
+    /*background-color:#104E8B;*/
+}
+
+.lip-bar {
+    font-size: 1.6em;
+    color: white;
+
+
+    text-align: left;
+    line-height: 50px;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 700px;
+    height: 50px;
+    /* IE10 Consumer Preview */
+    background-image: -ms-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* Opera */
+    background-image: -o-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #175DB0), color-stop(1, #09316E));
+
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(bottom, #175DB0 0%, #09316E 100%);
+
+    /* W3C Markup, IE10 Release Preview */
+    background-image: linear-gradient(to top, #175DB0 0%, #09316E 100%);
+
+    /*background-color:#104E8B;*/
+}
+
+.tv-date {
+    position: absolute;
+    left: 10px;
+    top: -23px;
+    width: 200px;
+    height: 124px;
+
+    border-radius:  0 0 7px 7px;
+    border-left: 0;
+    color: #104E8B;
+    background-color: transparent;
+
+    z-index: 100;
+}
+
+.tv-date .day {
+    position: absolute;
+    left: -40px;
+    bottom: 35px;
+    width: 160px;
+
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+}
+
+.tv-date .date {
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+    width: 200px;
+
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    opacity: 0.6;
+}
+
+/* PERIODS */
+.tv-schedule .periods {
+    position: absolute;
+    left: 0;
+    top: 155px;
+    width: 83px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+}
+.tv-schedule .periods > div {
+    opacity: 0.5;
+}
+
+.tv-schedule .periods div span {
+    display: none;
+
+
+}
+
+.tv-schedule .periods .lunch div {
+    display: inline;
+    font-size: 24px !important;
+}
+
+/* -- CURRENT PERIOD -- */
+.tv-schedule .periods .current {
+    color: rgba(16, 78, 139, 1);
+    opacity: 1;
+
+}
+.tv-schedule .periods .current:after /*arrow*/
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 14px 21px 14px 0;
+    border-color: transparent #5988bb;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-top: -14px;
+    left: 64px;
+    top: 0%;
+    opacity: 1 !important;
+
+}
+
+.tv-schedule .periods .first:after /*arrow*/
+{
+    border-color: transparent #104e8b;
+}
+
+.tv-schedule .periods .current.lunch div {
+    font-size: 28px !important;
+}
+.period-time-info {
+    color: #ffffff;
+    opacity: 1;
+    position:fixed;
+    left:85px;
+    top:150px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width:315px;
+    height: 40px !important;
+    padding-top: 0px;
+
+    font-size: 40px !important;
+    font-weight: normal;
+    font-family: "digi";
+    background-color: #104E8B;
+    line-height: 40px !important;
+
+}
+
+/*.period-time-info .responsive-info{*/
+    /*left: 85px;*/
+    /*top: 150px;*/
+/*}*/
+
+/*.period-time-info-responsive {*/
+    /*color: #ffffff;*/
+    /*opacity: 1;*/
+    /*position:fixed;*/
+    /*left:85px;*/
+    /*top:150px;*/
+    /*border-top-left-radius: 5px;*/
+    /*border-top-right-radius: 5px;*/
+    /*width:315px;*/
+    /*padding-top: 0px;*/
+    /*margin-bottom:-30px;*/
+    /*font-size:40px !important;*/
+    /*font-weight: normal;*/
+    /*font-family: "digi";*/
+    /*background-color: #104E8B;*/
+    /*line-height:40px;*/
+/*}*/
+
+/*.tv-schedule .periods .current span {*/
+    /*display: block;*/
+    /*position: relative;*/
+    /*left: 35px;*/
+    /*height: 75px;*/
+    /*width: 70px;*/
+    /*text-align: center;*/
+    /*font-size: 18px;*/
+/*}*/
+
+.arrow-left {
+    margin-top:230px;
+    margin-left:86px;
+    width: 0px;
+    height: 0px;
+    opacity:.8;
+    border-style: solid;
+    border-width: 7px 14px 7px 0;
+    border-color: transparent #104E8B transparent transparent;
+}
+
+/*.tv-schedule .periods .current.lunch span {*/
+    /*top: -59px;*/
+    /*left: 51px;*/
+/*}*/
+
+/* -- ONE-FIVE -- */
+.tv-schedule .periods.onetofive {
+    top: 176px;
+}
+
+.tv-schedule .periods.onetofive div {
+    height: 44px;
+    font-size: 46px;
+}
+.tv-schedule .periods.onetofive .current {
+    position: relative;
+    top: 16px;
+    height: 75px;
+    font-size: 72px;
+}
+
+/* -- SIX -- */
+.tv-schedule .periods.six {
+    top: 160px;
+}
+
+.tv-schedule .periods.six div {
+    height: 44px;
+    font-size: 46px;
+}
+.tv-schedule .periods.six .current {
+    position: relative;
+    top: 16px;
+    height: 75px;
+    font-size: 72px;
+}
+
+/* -- SEVEN -- */
+.tv-schedule .periods.seven div {
+    height: 40px;
+    font-size: 44px;
+}
+.tv-schedule .periods.seven .current {
+    position: relative;
+    top: 12px;
+    height: 66px;
+    font-size: 68px;
+}
+
+/* -- EIGHT -- */
+.tv-schedule .periods.eight div {
+    height: 34px;
+    font-size: 40px;
+}
+
+.tv-schedule .periods.eight .current {
+    position: relative;
+    top: 18px;
+    height: 64px;
+    font-size: 68px;
+}
+
+/* -- NINE -- */
+.tv-schedule .periods.nine div {
+    height: 30px;
+    font-size: 34px;
+}
+.tv-schedule .periods.nine .current {
+    position: relative;
+    top: 14px;
+    height: 58px;
+    font-size: 65px;
+}
+
+/* PROGRESS BAR */
+.tv-progress {
+    position: absolute;
+    left: -20px;
+    bottom: -10px;
+    width: 680px;
+    height: 30px;
+    border-top: 4px solid white;
+    background-color: #a3a3a3;
+}
+
+.tv-progress-responsive {
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    width: 100%;
+    height: 30px;
+    border-top: 4px solid white;
+    background-color: #a3a3a3;
+}
+
+.tv-progress .tv-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    border-radius: 0 5px 5px 0;
+    background-color: #104E8B;
+}
+
+.progress-info {
+    position: absolute;
+    left: 65px;
+    bottom: 60px;
+    width: 100%;
+}
+
+.progress-info .time-left {
+    color: #858b88;
+    font-family: Helvetica, sans-serif;
+    font-size: 60px;
+    text-align: center;
+}
+
+/* ANNOUNCEMENT CONTENT */
+/*.tv-announcement-background {*/
+/*position: absolute;*/
+/*left: 140px;*/
+/*top: 10px;*/
+
+/*width: 486px;*/
+/*height: 400px;*/
+
+/*border-radius: 0px;*/
+
+/*background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%); *//* FF3.6+ */
+/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(40%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); *//* Chrome,Safari4+ */
+/*background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 40%,rgba(255,255,255,0) 100%); *//* Chrome10+,Safari5.1+ */
+/*background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 40%,rgba(255,255,255,0) 100%); *//* Opera 11.10+ */
+/*background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 40%,rgba(255,255,255,0) 100%); *//* IE10+ */
+/*background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 40%,rgba(255,255,255,0) 100%); *//* W3C */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); *//* IE6-9 */
+
+/*opacity: 0.2;*/
+/*}*/
+
+.tv-announcement {
+    position: absolute;
+    left: 150px;
+    top: 20px;
+
+    width: 290px;
+    padding: 5px;
+
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+.announcement {
+    position:relative;
+    left:0;
+    width:500px;
+    height:50px;
+    overflow-x: hidden;
+    white-space:nowrap;
+}
+
+.period-number{
+
+}
+#iframeholder {
+    width:250px;
+    height:160px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    position:relative;
+    left:110px;
+    top:210px;
+}
+
+.tv-announcement .title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    color: white;
+    /*text-shadow: 0 0 6px #333;*/
+
+    z-index: 100;
+}
+
+.tv-announcement-image {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    width: 145px;
+
+}
+
+#passing-header{
+    color: #ffffff;
+    opacity: 1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width:315px;
+    background-color: #104E8B;
+    line-height:40px;
+    text-align: center;
+    letter-spacing: 5;
+    font-weight: bold;
+}
+
+#passing-info-holder{
+    font-size: .6em;
+    letter-spacing: 0;
+    text-align: left;
+    font-weight: normal;
+    overflow: hidden;
+
+}

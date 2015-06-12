@@ -1,0 +1,246 @@
+<head>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/responsive.css?<%= rand(10000000000) %>">
+  <title>iSHS</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- js -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.marquee.min.js"></script>
+  <script src="/js/common.js?<%= rand(10000000000) %>"></script>
+  <script src="/js/tv.js?<%= rand(10000000000) %>"></script>
+  <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+</head>
+<div class="container">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header navbar-right">
+        <a class="btn btn-default navbar-btn" href="/auth/logout">Log Out </a>
+
+      </div>
+      <div class="navbar-header navbar-right">
+        <a class="btn btn-default navbar-btn active" href="/personalSchedule">Edit Schedule</a>
+
+      </div>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"> <div class="tv-time"><div class="time"></div></div>  <span class="badge pull-right"><div class="tv-date"><div class="day"></div><div class="month"></div><div class="date"></div></div></span></a>
+      </div>
+    </div>
+
+  </nav>
+  <div style="margin-bottom:63px;"></div>
+  <% if flash[:info] %>
+      <% puts flash[:info] %>
+      <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <i class="icon-info-sign text-info"></i> <%= flash[:info] %> </div>
+  <% end %>
+  <% if flash[:success] %>
+      <% puts flash[:success] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <i class="icon-ok-sign text-success"></i> <%= flash[:success] %>  </div>
+  <% end %>
+  <% if flash[:error] %>
+      <% unless flash[:error]=='' or flash[:error]==nil or flash[:error]==[] %>
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <i class="icon-exclamation-sign text-error"></i> <%= flash[:error] %> </div>
+      <% else %>
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong><i class="icon-warning-sign text-error"></i> Unknown Error.
+              <i class="icon-warning-sign text-error"></i></strong> It appears that an operation failed, but no error
+            message was generated.
+            Please contact site admin.
+          </div>
+      <% end %>
+  <% end %>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Classes</div>
+
+    <!-- Table -->
+    <form class="form-group" action="/editschedule" method="post">
+    <table class="table table-striped">
+      <tr>
+        <td><h4>Period Number </h4></td>
+        <td><h4>Class Name </h4></td>
+        <td><h4>Class Type </h4></td>
+      </tr>
+
+      <tr>
+        <td><h4>Period 1 </h4></td>
+        <td><div><input class="form-control" value="<%= @user.class1 %>" name="c1"></div></td>
+        <td><div><select class="form-control" name="type1">
+          <option <% if @user.classType1 == 0 %> selected="selected"<% end %> value="0">Please Select a Class</option>
+          <option <% if @user.classType1 == 1%> selected="selected"<% end %> value="1">Science</option>
+          <option <% if @user.classType1 == 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType1 == 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType1 == 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType1 == 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType1 == 6 %> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType1 == 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType1 == 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType1 == 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType1 == 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType1 == 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType1 == 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType1 == 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType1 == 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+      <tr>
+        <td><h4>Period 2</h4></td>
+        <td><div><input class="form-control" value="<%= @user.class2%>" name="c2"></div></td>
+        <td><div><select class="form-control" name="type2">
+          <option <% if @user.classType2== 0 %> selected="selected"<% end %> value="0" >Please Select a Class</option>
+          <option <% if @user.classType2== 1%> selected="selected"<% end %> value="1" >Science</option>
+          <option <% if @user.classType2== 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType2== 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType2== 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType2== 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType2== 6 %> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType2== 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType2== 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType2== 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType2== 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType2== 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType2== 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType2== 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType2== 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+      <tr>
+        <td><h4>Period 3</h4></td>
+        <td><div><input class="form-control" value="<%= @user.class3%>" name="c3"></div></td>
+        <td><div><select class="form-control" name="type3">
+          <option <% if @user.classType3== 0 %> selected="selected"<% end %> value="0" >Please Select a Class</option>
+          <option <% if @user.classType3== 1%> selected="selected"<% end %> value="1" >Science</option>
+          <option <% if @user.classType3== 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType3== 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType3== 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType3== 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType3== 6 %> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType3== 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType3== 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType3== 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType3== 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType3== 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType3== 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType3== 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType3== 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+      <tr>
+        <td><h4>Period 4 </h4></td>
+        <td><div><input class="form-control" value="<%= @user.class4 %>" name="c4"></div></td>
+        <td><div><select class="form-control" name="type4">
+          <option <% if @user.classType4 == 0 %> selected="selected"<% end %> value="0" >Please Select a Class</option>
+          <option <% if @user.classType4 == 1%> selected="selected"<% end %> value="1" >Science</option>
+          <option <% if @user.classType4 == 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType4 == 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType4 == 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType4 == 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType4 == 6 %> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType4 == 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType4 == 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType4 == 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType4 == 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType4 == 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType4 == 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType4 == 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType4 == 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+      <tr>
+        <td><h4>Period 5 </h4></td>
+        <td><div><input class="form-control" value="<%= @user.class5 %>" name="c5"></div></td>
+        <td><div><select class="form-control" name="type5">
+          <option <% if @user.classType5 == 0 %> selected="selected"<% end %> value="0" >Please Select a Class</option>
+          <option <% if @user.classType5 == 1%> selected="selected"<% end %> value="1" >Science</option>
+          <option <% if @user.classType5 == 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType5 == 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType5 == 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType5 == 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType5 == 6 %> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType5 == 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType5 == 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType5 == 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType5 == 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType5 == 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType5 == 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType5 == 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType5 == 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+      <tr>
+        <td><h4>Period 6 </h4></td>
+        <td><div><input class="form-control" value="<%= @user.class6 %>" name="c6"></div></td>
+        <td><div><select class="form-control" name="type6">
+          <option <% if @user.classType6 == 0 %> selected="selected"<% end %> value="0" >Please Select a Class</option>
+          <option <% if @user.classType6 == 1%> selected="selected"<% end %> value="1" >Science</option>
+          <option <% if @user.classType6 == 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType6 == 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType6 == 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType6 == 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType6 == 6 %> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType6 == 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType6 == 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType6 == 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType6 == 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType6 == 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType6 == 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType6 == 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType6 == 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+      <tr>
+        <td><h4>Period 7 </h4></td>
+        <td><div><input class="form-control" value="<%= @user.class7 %>" name="c7"></div></td>
+        <td><div><select class="form-control" name="type7">
+          <option <% if @user.classType7 == 0 %> selected="selected"<% end %> value="0" >Please Select a Class</option>
+          <option <% if @user.classType7 == 1%> selected="selected"<% end %> value="1" >Science</option>
+          <option <% if @user.classType7 == 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType7 == 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType7 == 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType7 == 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType7 == 6%> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType7 == 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType7 == 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType7 == 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType7 == 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType7 == 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType7 == 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType7 == 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType7 == 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+      <tr>
+        <td><h4>Period 8 </h4></td>
+        <td><div><input class="form-control" value="<%= @user.class8 %>" name="c8"></div></td>
+        <td><div><select class="form-control" name="type8">
+          <option <% if @user.classType8 == 0 %> selected="selected"<% end %> value="0" >Please Select a Class</option>
+          <option <% if @user.classType8 == 1%> selected="selected"<% end %> value="1">Science</option>
+          <option <% if @user.classType8 == 2 %> selected="selected"<% end %> value="2" >Math</option>
+          <option <% if @user.classType8 == 3 %> selected="selected"<% end %> value="3" >Music</option>
+          <option <% if @user.classType8 == 4 %> selected="selected"<% end %> value="4" >World Language</option>
+          <option <% if @user.classType8 == 5 %> selected="selected"<% end %> value="5" >Academic Support</option>
+          <option <% if @user.classType8 == 8 %> selected="selected"<% end %> value="6" >Social Studies</option>
+          <option <% if @user.classType8 == 7 %> selected="selected"<% end %> value="7" >Special Ed</option>
+          <option <% if @user.classType8 == 8 %> selected="selected"<% end %> value="8" >Art</option>
+          <option <% if @user.classType8 == 9 %> selected="selected"<% end %> value="9" >English</option>
+          <option <% if @user.classType8 == 10 %> selected="selected"<% end %> value="10" >Media</option>
+          <option <% if @user.classType8 == 11%> selected="selected"<% end %> value="11" >Family Science</option>
+          <option <% if @user.classType8 == 12 %> selected="selected"<% end %> value="12" >PE</option>
+          <option <% if @user.classType8 == 13 %> selected="selected"<% end %> value="13" >Technology</option>
+          <option <% if @user.classType8 == 14 %> selected="selected"<% end %> value="14" >Theater</option>
+        </select></div></td>
+      </tr>
+    </table>
+      <input class="btn btn-primary btn-block" type="submit" value="Submit" >
+    </form>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<a id="back_btn" href="<%= url('/admin/schedules') %>" class="btn btn-default"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a><br><br>
+<table id="elements" data-action-url="<%= url("/admin/schedule/#{@schedule.id}/period") %>" class="table">
+  <tr>
+    <th>Period Name</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Lunch Waves</th>
+    <th>Actions</th>
+  </tr>
+  <% @schedule.periods.each do |period| %>
+      <tr data-json='<%= period.to_json(:methods => [:start_string, :end_string]) %>'>
+        <td class="fixed"><%= period.name %></td>
+        <td class="fixed"><%= period.start_string %></td>
+        <td class="fixed"><%= period.end_string %></td>
+        <td class="fixed"><%= period.lunch_waves %></td>
+        <td class="fixed">
+          <a href="#" title="Edit" class="btn btn-info edit-period-btn"><i class="fa fa-pencil"></i></a>
+          <a href="#" title="Delete" class="btn btn-danger delete-period-btn"><i class="fa fa-trash-o"></i></a>
+        </td>
+      </tr>
+  <% end %>
+  <tr><td colspan="5"><a id="add_period_btn" href="#" title="Add Period" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add Period</a></td></tr>
+</table>

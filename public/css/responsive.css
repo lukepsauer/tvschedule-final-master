@@ -1,0 +1,158 @@
+/* PERIODS */
+
+.prev-day{
+    margin-left:20px;
+}
+
+.clockbox-in{
+    font-size: 30pt;
+}
+
+.clockbox-left{
+    font-size: 30pt;
+}
+
+
+.tv-schedule .periods {
+
+    margin-left:10px;
+    width: 100%;
+    font-weight: bold;
+
+}
+.tv-schedule .periods > div {
+    opacity: 0.5;
+}
+
+.tv-schedule .periods div span {
+    display: none;
+
+
+}
+.period-time-info {
+    color: #ffffff;
+    opacity: 1;
+    margin-left:50px;
+    margin-top:-110px  ;
+    font-size:20px !important;
+    font-weight: normal;
+    line-height:90px;
+
+}
+
+.responsive-info{
+    margin-top:-80px !important;
+    margin-left:40px;
+
+}
+.period-title{
+    margin-top:-70px ;
+    margin-left:5px;
+    color: #ffffff;
+    opacity: 1;
+    font-size:20px !important;
+    font-weight: normal;
+    line-height:90px;
+}
+
+
+.panel-assignments {
+    height: 550px;
+}
+
+.tv-schedule .periods .lunch div.sub {
+    display: inline;
+    font-size: 24px ;
+}
+
+/* -- CURRENT PERIOD -- */
+.tv-schedule .periods .current {
+    color: #ffffff;
+    opacity: 1;
+
+}
+
+
+.tv-schedule .periods .current.lunch div {
+    font-size: 28px ;
+}
+
+.tv-schedule .periods .current span {
+    display: block;
+    position: relative;
+    margin-top:20px;
+    height: 75px;
+    width: 70px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.tv-schedule .periods .current.lunch span {
+    margin-top: -59px;
+    margin-left: 51px;
+}
+
+/* -- ONE-FIVE -- */
+.tv-schedule .periods.onetofive {
+    top: 176px;
+}
+
+.tv-schedule .periods.onetofive div {
+    height: 44px;
+    font-size: 46px;
+}
+.tv-schedule .periods.onetofive .current {
+    top: 16px;
+    height: 75px;
+    font-size: 72px;
+}
+
+/* -- SIX -- */
+.tv-schedule .periods.six {
+    top: 160px;
+}
+
+.tv-schedule .periods.six div {
+    height: 44px;
+    font-size: 46px;
+}
+.tv-schedule .periods.six .current {
+    top: 16px;
+    height: 75px;
+    font-size: 72px;
+}
+
+/* -- SEVEN -- */
+.tv-schedule .periods.seven div {
+    height: 40px;
+    font-size: 44px;
+}
+.tv-schedule .periods.seven .current {
+    top: 12px;
+    height: 66px;
+    font-size: 68px;
+}
+
+/* -- EIGHT -- */
+.tv-schedule .periods.eight div {
+    height: 35px;
+    font-size: 40px;
+}
+
+.tv-schedule .periods.eight .current {
+    top: 18px;
+    height: 70px;
+    font-size: 68px;
+}
+
+/* -- NINE -- */
+.tv-schedule .periods.nine div {
+    height: 30px;
+    font-size: 34px;
+}
+.tv-schedule .periods.nine .current {
+    top: 14px;
+    height: 58px;
+    font-size: 65px;
+}

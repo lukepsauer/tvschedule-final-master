@@ -1,0 +1,60 @@
+html{
+    height:100%;
+}
+body {
+    background-image: url('/img/Staples_High_School_Front_Panoramic.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+    background-attachment:fixed;
+
+}
+
+.container-centered {
+    margin: 30px;
+    border-radius: 3px;
+    padding: 10px;
+
+    background-color: rgba(255, 255, 255, 0.70);
+
+}
+
+td {
+    /*vertical-align: middle !important;*/
+}
+
+td.fixed {
+    width: 15%;
+}
+
+td.actions {
+    width: 137px !important;
+}
+
+.input-append {
+    margin: 0 !important;
+}
+
+.drag-drop{
+    background-color: rgba(0, 0, 0, 0.50);
+    margin:5px;
+    border-radius:2px;
+    color:white;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:5px;
+    padding-right:5px;
+
+    width:150px;
+
+
+}
+
+
+ul{
+    list-style-type:none;
+}
+
+.bigger{
+    font-size: 1.7em;
+}

@@ -1,0 +1,9 @@
+Gemfile.lock
+README
+*.jar
+*.db
+*.txt
+.idea
+.idea/*
+.DS_Store
+authstore/*

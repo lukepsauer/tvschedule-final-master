@@ -1,0 +1,134 @@
+<head>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/responsive.css?<%= rand(10000000000) %>">
+  <title>iSHS</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- js -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.marquee.min.js"></script>
+  <script src="/js/common.js?<%= rand(10000000000) %>"></script>
+  <script src="/js/tv.js?<%= rand(10000000000) %>"></script>
+  <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/superhero/bootstrap.min.css" rel="stylesheet">
+</head>
+<div class="container">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header navbar-right">
+        <a class="btn btn-default navbar-btn" href="/login/user">Login</a>
+
+      </div>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"> <div class="tv-time"><div class="time"></div></div>  <span class="badge pull-right"><div class="tv-date"><div class="day"></div><div class="month"></div><div class="date"></div></div></span></a>
+      </div>
+    </div>
+
+  </nav>
+  <div style="margin-bottom:63px;"></div>
+  <% if flash[:info] %>
+      <% puts flash[:info] %>
+      <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <i class="icon-info-sign text-info"></i> <%= flash[:info] %> </div>
+  <% end %>
+  <% if flash[:success] %>
+      <% puts flash[:success] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <i class="icon-ok-sign text-success"></i> <%= flash[:success] %>  </div>
+  <% end %>
+  <% if flash[:error] %>
+      <% unless flash[:error]=='' or flash[:error]==nil or flash[:error]==[] %>
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <i class="icon-exclamation-sign text-error"></i> <%= flash[:error] %> </div>
+      <% else %>
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong><i class="icon-warning-sign text-error"></i> Unknown Error.
+              <i class="icon-warning-sign text-error"></i></strong> It appears that an operation failed, but no error
+            message was generated.
+            Please contact site admin.
+          </div>
+      <% end %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">Today's Periods <!--<button class="btn btn-default prev-day btn-sm"><i class="fa fa-chevron-left"></i></button> <button class="btn btn-default next-day btn-sm"><i class="fa fa-chevron-right"></i></button>--></div>
+        <div class="panel-body">
+          <div class="tv-schedule">
+            <div class="periods eight">
+            </div>
+
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">Time In</div>
+        <div class="panel-body">
+          <div class="clockbox-in">-</div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Time Left</div>
+        <div class="panel-body">
+          <div class="clockbox-left">-</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lunch-only">
+    <div class="col-md-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">Classes with This Lunch</div>
+        <div class="panel-body">
+      <ul id='period-classes-info'>
+            <div class='period-classes-info-split-left'>
+            </div>
+             <div class='period-classes-info-split-right'>
+            </div>
+        </ul><br>
+      </div>
+        </div>
+    </div>
+    </div>
+
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">Period Information</div>
+          <div class="panel-body">
+            <ul id='period-anncmt-info'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">iSHS 3.0</div>
+        <div class="panel-body">
+            Developed by Students in Mr. Dewey's Software Development Class.
+            Redesigned by Dodd and Luke Sauer
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Announcements</div>
+      <div class="panel-body">
+        <ul class='announcement-data'>
+        </ul>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>

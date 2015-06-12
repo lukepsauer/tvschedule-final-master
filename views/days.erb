@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="col-md-6">
+    <a href="/admin/calendar" class="btn btn-default"><i class="fa fa-reply"></i>&nbsp;&nbsp;Back</a>
+
+    <h5>Schedule for <%= dateObjFromString(params[:date]).strftime("%A, %B %-e, %Y") %></h5>
+
+    <h3><%=@schedule.name%></h3>
+    <%@periods.each do |i|%>
+        <%="<br><b class='bigger'>"+i.name + "</b> " + ((i.start_seconds/3600)<=12 ? (i.start_seconds/3600).floor.to_s : ((i.start_seconds/3600)-12).floor.to_s) + ":"+ ((i.start_seconds%3600)/60).floor.to_s + " - " + ((i.end_seconds/3600)<=12 ? (i.end_seconds/3600).floor.to_s : ((i.end_seconds/3600)-12).floor.to_s) + ":"+ ((i.end_seconds%3600)/60).floor.to_s%>
+    <%end%>
+  </div>
+
+  <div class="col-md-6">
+    <h3>Change Schedule</h3>
+    <form action="/admin/day/<%=params[:date]%>/update" method="post">
+      <select name='schedule_id' class="form-control changeEnter">
+        <%@schedules.each do |i|%>
+            <option value="<%=i.id%>" <%= 'selected' if i.id == @schedule.id %>><%=i.name%></option>
+        <%end%>
+
+      </select>
+      <br>
+      <a href="/admin/day/<%= params[:date] %>/remove" class="btn btn-danger <%= 'disabled' if @schedule.id < 6 %>"><i class="fa fa-undo"></i> Revert</a>
+      <button type="submit" class="btn btn-success changeSubmit disabled pull-right"><i class="fa fa-check"></i></button>
+    </form>
+  </div>
+
+  <br>
+
+  <div class="col-md-12">
+    <h3>Current Period Information</h3>
+    <table class="table">
+      <tr class="">
+        <th>Info</th>
+        <th>Period</th>
+        <th>Actions</th>
+      </tr>
+      <%@infos.each do |i|%>
+          <tr>
+            <td>
+              <%=i.text%>
+            </td>
+            <td>
+              <%=i.period%>
+            </td>
+            <td>
+              <a href='/admin/info/delete/<%=i.id%>' class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+            </td>
+          </tr>
+      <%end%>
+      <tr id="add_info_form" class="hidden">
+        <td class="form-group">
+          <input form="info_form" type="text" class="infoEnter form-control" id="text" name="text" placeholder="Enter Text">
+        </td>
+        <td class="form-group">
+          <select form="info_form" class="form-control" name="period">
+            <%@periods.each do |i|%>
+                <option value="<%=i.name%>"><%=i.name%></option>
+            <%end%>
+          </select>
+        </td>
+        <td>
+          <form id="info_form" action="/admin/day/<%=params[:date]%>/period/addAnnc" method="post">
+            <button type="submit" class="btn btn-success infoSubmit disabled"><i class="fa fa-check"></i></button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <button class="btn btn-primary" id="add_info_btn">
+            <i class="fa fa-plus"></i>&nbsp;&nbsp;Add Period Information
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
